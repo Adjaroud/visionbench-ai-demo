@@ -1,0 +1,53 @@
+{
+  "fixed": {
+    "runs": 60,
+    "successes": 60,
+    "cases_passing_all_repeats": 20,
+    "cases_with_variable_outcome": 0,
+    "median_s": 0.15069944999413565,
+    "p95_s": 0.18800939992070198,
+    "model_used_runs": 0,
+    "model_used_median_s": null,
+    "model_used_p95_s": null,
+    "calls": 0,
+    "prompt_tokens": 0,
+    "generated_tokens": 0,
+    "load_s": 0.0,
+    "api_charge_eur": 0,
+    "electricity_cost": "not_measured"
+  },
+  "llama3.1:8b": {
+    "runs": 60,
+    "successes": 60,
+    "cases_passing_all_repeats": 20,
+    "cases_with_variable_outcome": 0,
+    "median_s": 7.408010249957442,
+    "p95_s": 23.06687520002015,
+    "model_used_runs": 36,
+    "model_used_median_s": 17.43384224997135,
+    "model_used_p95_s": 24.37140200007707,
+    "calls": 81,
+    "prompt_tokens": 23979,
+    "generated_tokens": 738,
+    "load_s": 0.2637416,
+    "api_charge_eur": 0,
+    "electricity_cost": "not_measured"
+  },
+  "qwen3:4b": {
+    "runs": 60,
+    "successes": 60,
+    "cases_passing_all_repeats": 20,
+    "cases_with_variable_outcome": 0,
+    "median_s": 7.167003549984656,
+    "p95_s": 14.173016600077972,
+    "model_used_runs": 36,
+    "model_used_median_s": 9.885972700023558,
+    "model_used_p95_s": 14.9976407000795,
+    "calls": 90,
+    "prompt_tokens": 26802,
+    "generated_tokens": 840,
+    "load_s": 0.4065736,
+    "api_charge_eur": 0,
+    "electricity_cost": "not_measured"
+  }
+}

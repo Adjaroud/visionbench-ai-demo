@@ -1,0 +1,28 @@
+{
+  "recordings": {
+    "fixed": "data/demo/comparison/fixed.json",
+    "agent": "data/demo/comparison/agent.json",
+    "rag": "data/demo/comparison/rag.json",
+    "guided_rag": "data/demo/comparison/guided-rag.json",
+    "guided_agent": "data/demo/comparison/guided-agent.json"
+  },
+  "source_runs": {
+    "fixed": "fixed/fast_with_ap_floor/1.json",
+    "agent": "agent/fast_with_ap_floor/1.json",
+    "rag": "rag/native_resize/1.json"
+  },
+  "summary": "data/demo/comparison/summary.json",
+  "rag_question": "Quels sont le petit côté de référence et la limite du grand côté de Faster R-CNN MobileNetV3 320 FPN ? Le redimensionnement dépend-il des proportions de l’image ?",
+  "files_sha256": {
+    "data/demo/comparison/fixed.json": "4721ec646ac613c522e005a775ddcff79c53f7f3c4bc127a5207663bb02fe9a2",
+    "data/demo/comparison/agent.json": "8b381ea66d0dcf00e0fd78a3f9447c61970b349c77a6c837bcb0e9974266da63",
+    "data/demo/comparison/rag.json": "c63205e5993f4992cc097d5a447b6aafdb9751314786519d685070895360ee69",
+    "data/demo/comparison/summary.json": "96f92e5377cf9452722156278f8580180f161a24179169abd1f8a4fc168b78f2",
+    "reports/resources_100.sqlite": "530a07ccb94f47cfb15e0e747a4fc107f9e4fc0e4dd891e21ed9977a815c9436",
+    "reports/resources_100.manifest.json": "0d99747422f3764e6f58d35c7322773bce38a9764387fa1f4494ce49f26f0ddf",
+    "reports/resources_100/raw.json": "9c2d8eae74c007efb6901601fc15bf9d359882f26639a6c818ae9f4c2c4b2ec8",
+    "reports/j2_coco_eval/metrics.json": "6eecf096cae28cc9a19e4245eacd7a35ea46824b643b0505ae73306e432023c9",
+    "data/demo/comparison/guided-rag.json": "b3a5c4571d9003fa3023f8ee7506cfac2c508a8f3823fadbc0c54564e9c3f542",
+    "data/demo/comparison/guided-agent.json": "18a2dd9e06eda16e0c69fd8c30d8cedba056bccf59b12eb426dbe7d9c1a0293b"
+  }
+}

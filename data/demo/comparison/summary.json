@@ -1,0 +1,56 @@
+{
+  "kind": "scoped_automatic_checks",
+  "modes": {
+    "fixed": {
+      "runs": 12,
+      "automatic_passes": 12,
+      "median_s": 4.547,
+      "p95_s": 8.563,
+      "model_calls": 12,
+      "generated_tokens": 504
+    },
+    "agent": {
+      "runs": 12,
+      "automatic_passes": 12,
+      "median_s": 53.727000000000004,
+      "p95_s": 84.609,
+      "model_calls": 51,
+      "generated_tokens": 3691
+    },
+    "rag": {
+      "runs": 12,
+      "automatic_passes": 12,
+      "median_s": 30.5055,
+      "p95_s": 42.485,
+      "model_calls": 24,
+      "generated_tokens": 1694
+    }
+  },
+  "paired_cases": [
+    {
+      "id": "fast_with_ap_floor",
+      "repetitions": 3,
+      "fixed": 3,
+      "agent": 3
+    },
+    {
+      "id": "tight_memory_ap_floor",
+      "repetitions": 3,
+      "fixed": 3,
+      "agent": 3
+    },
+    {
+      "id": "separate_exclusions",
+      "repetitions": 3,
+      "fixed": 3,
+      "agent": 3
+    },
+    {
+      "id": "unmeasured_gpu",
+      "repetitions": 3,
+      "fixed": 3,
+      "agent": 3
+    }
+  ],
+  "manual_semantic_review_required": true
+}

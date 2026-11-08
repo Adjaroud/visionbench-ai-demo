@@ -1,0 +1,6 @@
+# Dépendances directes de la démo CPU, validées avec Python 3.12.7.
+# LangGraph, Ollama, PyTorch et les poids des modèles ne sont pas nécessaires.
+streamlit==1.37.1
+pandas==2.2.2
+numpy==1.26.4
+pyarrow==16.1.0

@@ -1,0 +1,163 @@
+{
+  "created_at_utc": "2026-11-08T17:21:40.216676+00:00",
+  "kind": "verified_rag_development_demo",
+  "result": {
+    "question": "Que mesure max_memory_allocated dans PyTorch ?",
+    "model": "qwen3:4b-instruct-2507-q4_K_M",
+    "status": "generated",
+    "claims": [
+      {
+        "kind": "documentary",
+        "claim_id": "C1",
+        "text": "max_memory_allocated indique le pic de mémoire GPU occupée par les tenseurs PyTorch, en octets. Réinitialiser les statistiques de pic avant la fenêtre mesurée permet de suivre le maximum pendant cette fenêtre.",
+        "citations": [
+          "memory-allocated"
+        ],
+        "source_id": "memory-allocated",
+        "support_quote": "max_memory_allocated indique le pic de mémoire GPU occupée par les tenseurs PyTorch, en octets. Réinitialiser les statistiques de pic avant la fenêtre mesurée permet de suivre le maximum pendant cette fenêtre.",
+        "evidence_id": "E1",
+        "rendering": "exact_quote"
+      }
+    ],
+    "missing_information": [],
+    "model_calls": 2,
+    "calls": [
+      {
+        "phase": "draft",
+        "response_received": true,
+        "raw_content": "{\"claims\": [{\"evidence_id\": \"E1\", \"text\": \"max_memory_allocated indique le pic de mémoire GPU occupée par les tenseurs PyTorch, en octets.\"}]}",
+        "usage": {
+          "prompt_tokens": 716,
+          "generated_tokens": 44,
+          "total_duration_ns": 26387385900,
+          "done_reason": "stop"
+        }
+      },
+      {
+        "phase": "audit",
+        "response_received": true,
+        "raw_content": "{\"fully_answered\": true, \"verdicts\": [{\"claim_id\": \"C1\", \"relevant\": true, \"supported\": true}]}",
+        "usage": {
+          "prompt_tokens": 425,
+          "generated_tokens": 32,
+          "total_duration_ns": 12247383700,
+          "done_reason": "stop"
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1141,
+      "generated_tokens": 76,
+      "total_duration_ns": 38634769600
+    },
+    "draft_candidates": [
+      {
+        "claim_id": "C1",
+        "text": "max_memory_allocated indique le pic de mémoire GPU occupée par les tenseurs PyTorch, en octets.",
+        "citations": [
+          "memory-allocated"
+        ],
+        "source_id": "memory-allocated",
+        "support_quote": "max_memory_allocated indique le pic de mémoire GPU occupée par les tenseurs PyTorch, en octets. Réinitialiser les statistiques de pic avant la fenêtre mesurée permet de suivre le maximum pendant cette fenêtre.",
+        "evidence_id": "E1"
+      }
+    ],
+    "mechanical_rejections": [],
+    "audit_rejections": [],
+    "audit": {
+      "fully_answered": true,
+      "verdicts": [
+        {
+          "claim_id": "C1",
+          "relevant": true,
+          "supported": true
+        }
+      ]
+    },
+    "error": null,
+    "duration_s": 39.191,
+    "retrieved_passages": [
+      {
+        "id": "memory-allocated",
+        "title": "PyTorch — max_memory_allocated",
+        "url": "https://docs.pytorch.org/docs/main/generated/torch.cuda.max_memory_allocated.html",
+        "version": "Documentation main",
+        "section": "max_memory_allocated",
+        "heading": "Pic de mémoire allouée aux tenseurs",
+        "text": "max_memory_allocated indique le pic de mémoire GPU occupée par les tenseurs PyTorch, en octets. Réinitialiser les statistiques de pic avant la fenêtre mesurée permet de suivre le maximum pendant cette fenêtre.",
+        "score": 7.465843000501108,
+        "matched_terms": [
+          "allocated",
+          "max",
+          "memory",
+          "pytorch"
+        ]
+      },
+      {
+        "id": "memory-reserved",
+        "title": "PyTorch — max_memory_reserved",
+        "url": "https://docs.pytorch.org/docs/main/generated/torch.cuda.max_memory_reserved.html",
+        "version": "Documentation main",
+        "section": "max_memory_reserved",
+        "heading": "Pic de mémoire réservée par l'allocateur",
+        "text": "max_memory_reserved indique le pic de mémoire GPU gérée par l'allocateur de cache de PyTorch, en octets. La mémoire réservée peut inclure de l'espace inutilisé par les tenseurs mais gardé pour des allocations futures. Ce compteur concerne l'allocateur PyTorch.",
+        "score": 5.346691093120338,
+        "matched_terms": [
+          "max",
+          "memory",
+          "pytorch"
+        ]
+      },
+      {
+        "id": "cuda",
+        "title": "PyTorch — CUDA semantics",
+        "url": "https://docs.pytorch.org/docs/main/notes/cuda.html",
+        "version": "Documentation main",
+        "section": "Asynchronous execution",
+        "heading": "Exécution asynchrone et synchronisation",
+        "text": "Les opérations CUDA sont généralement placées dans une file par le CPU et s'exécutent de façon asynchrone sur le GPU. Un chronomètre CPU sans synchronisation peut surtout mesurer la mise en file. Pour chronométrer du travail GPU, on attend la fin du travail concerné ou on mesure avec des événements CUDA.",
+        "score": 1.6752001526495133,
+        "matched_terms": [
+          "mesure"
+        ]
+      }
+    ],
+    "excerpts": [
+      {
+        "evidence_id": "E1",
+        "source_id": "memory-allocated",
+        "heading": "Pic de mémoire allouée aux tenseurs",
+        "quote": "max_memory_allocated indique le pic de mémoire GPU occupée par les tenseurs PyTorch, en octets. Réinitialiser les statistiques de pic avant la fenêtre mesurée permet de suivre le maximum pendant cette fenêtre."
+      },
+      {
+        "evidence_id": "E2",
+        "source_id": "memory-reserved",
+        "heading": "Pic de mémoire réservée par l'allocateur",
+        "quote": "max_memory_reserved indique le pic de mémoire GPU gérée par l'allocateur de cache de PyTorch, en octets. La mémoire réservée peut inclure de l'espace inutilisé par les tenseurs mais gardé pour des allocations futures. Ce compteur concerne l'allocateur PyTorch."
+      },
+      {
+        "evidence_id": "E3",
+        "source_id": "cuda",
+        "heading": "Exécution asynchrone et synchronisation",
+        "quote": "Les opérations CUDA sont généralement placées dans une file par le CPU et s'exécutent de façon asynchrone sur le GPU. Un chronomètre CPU sans synchronisation peut surtout mesurer la mise en file. Pour chronométrer du travail GPU, on attend la fin du travail concerné ou on mesure avec des événements CUDA."
+      }
+    ],
+    "accepted_ids": [
+      "memory-allocated",
+      "memory-reserved",
+      "cuda"
+    ],
+    "corpus_revision": "j3-v1",
+    "corpus_sha256": "4ea20914f41665cdb75d9419da50f6613e7ccb4c932dd53203ee6c8b30dfb426",
+    "validation": {
+      "quotes": "exact_substrings",
+      "numeric_literals": "in_exact_quotes",
+      "displayed_claims": "exact_quotes",
+      "support_and_relevance": "estimated_by_same_local_llm",
+      "semantic_guarantee": false,
+      "independent_model_verifier": false,
+      "completeness": "requires_review",
+      "question_identifiers_missing_from_passages": []
+    }
+  }
+}

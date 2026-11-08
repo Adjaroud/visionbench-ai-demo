@@ -1,0 +1,23 @@
+name: Demo CPU dans Docker
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Construire l'image
+        run: docker build -t visionbench-ai:ci .
+      - name: Tester les parcours et la sante HTTP
+        run: python3 scripts/validate_container.py --image visionbench-ai:ci --out reports/docker-ci.json

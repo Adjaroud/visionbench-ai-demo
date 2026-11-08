@@ -1,0 +1,122 @@
+{
+  "revision": "j3-v1",
+  "documents": [
+    {
+      "id": "cuda",
+      "title": "PyTorch — CUDA semantics",
+      "url": "https://docs.pytorch.org/docs/main/notes/cuda.html",
+      "version": "Documentation main",
+      "section": "Asynchronous execution",
+      "heading": "Exécution asynchrone et synchronisation",
+      "text": "Les opérations CUDA sont généralement placées dans une file par le CPU et s'exécutent de façon asynchrone sur le GPU. Un chronomètre CPU sans synchronisation peut surtout mesurer la mise en file. Pour chronométrer du travail GPU, on attend la fin du travail concerné ou on mesure avec des événements CUDA."
+    },
+    {
+      "id": "cuda-events",
+      "title": "PyTorch — torch.cuda.Event",
+      "url": "https://docs.pytorch.org/docs/main/generated/torch.cuda.Event.html",
+      "version": "Documentation main",
+      "section": "record, synchronize, elapsed_time",
+      "heading": "Événements CUDA et millisecondes",
+      "text": "Un événement CUDA marque une position dans un flux. Avec le chronométrage activé, on enregistre un événement au début et un à la fin de l'intervalle, puis on attend la fin avant de lire elapsed_time. La durée est exprimée en millisecondes."
+    },
+    {
+      "id": "memory-allocated",
+      "title": "PyTorch — max_memory_allocated",
+      "url": "https://docs.pytorch.org/docs/main/generated/torch.cuda.max_memory_allocated.html",
+      "version": "Documentation main",
+      "section": "max_memory_allocated",
+      "heading": "Pic de mémoire allouée aux tenseurs",
+      "text": "max_memory_allocated indique le pic de mémoire GPU occupée par les tenseurs PyTorch, en octets. Réinitialiser les statistiques de pic avant la fenêtre mesurée permet de suivre le maximum pendant cette fenêtre."
+    },
+    {
+      "id": "memory-reserved",
+      "title": "PyTorch — max_memory_reserved",
+      "url": "https://docs.pytorch.org/docs/main/generated/torch.cuda.max_memory_reserved.html",
+      "version": "Documentation main",
+      "section": "max_memory_reserved",
+      "heading": "Pic de mémoire réservée par l'allocateur",
+      "text": "max_memory_reserved indique le pic de mémoire GPU gérée par l'allocateur de cache de PyTorch, en octets. La mémoire réservée peut inclure de l'espace inutilisé par les tenseurs mais gardé pour des allocations futures. Ce compteur concerne l'allocateur PyTorch."
+    },
+    {
+      "id": "inference-mode",
+      "title": "PyTorch — inference_mode",
+      "url": "https://docs.pytorch.org/docs/main/generated/torch.autograd.grad_mode.inference_mode.html",
+      "version": "Documentation main",
+      "section": "inference_mode",
+      "heading": "Inference mode, gradients et model.eval",
+      "text": "inference_mode désactive l'enregistrement pour autograd et réduit le suivi nécessaire à l'entraînement. model.eval() change le comportement des couches en évaluation, par exemple le dropout et la normalisation par batch. Une inférence reproductible utilise les deux réglages selon le modèle."
+    },
+    {
+      "id": "ssdlite",
+      "title": "Torchvision — SSDLite MobileNetV3 Large 320",
+      "url": "https://docs.pytorch.org/vision/0.20/models/generated/torchvision.models.detection.ssdlite320_mobilenet_v3_large.html",
+      "version": "Torchvision 0.20",
+      "section": "Model builder and COCO_V1",
+      "heading": "Entrée fixe et poids SSDLite",
+      "text": "Le constructeur SSDLite320 de Torchvision associe une tête de détection SSD légère à un backbone MobileNetV3 Large et redimensionne l'entrée à 320 × 320 pixels. Les poids COCO_V1 permettent d'exécuter le détecteur préentraîné sur des images mises à l'échelle entre zéro et un."
+    },
+    {
+      "id": "faster-rcnn",
+      "title": "Torchvision — Faster R-CNN MobileNetV3 Large 320 FPN",
+      "url": "https://github.com/pytorch/vision/blob/v0.20.1/torchvision/models/detection/faster_rcnn.py",
+      "version": "Torchvision v0.20.1",
+      "section": "fasterrcnn_mobilenet_v3_large_320_fpn",
+      "heading": "Configuration native de Faster R-CNN 320",
+      "text": "La variante Faster R-CNN MobileNetV3 320 FPN fixe le petit côté de référence à 320 et plafonne le grand côté à 640. La taille redimensionnée dépend des proportions de l'image. Le constructeur définit aussi les limites de propositions et le seuil de score de son RPN."
+    },
+    {
+      "id": "coco-ap",
+      "title": "COCO — Detection evaluation",
+      "url": "https://github.com/cocodataset/cocodataset.github.io/blob/master/dataset/detection-eval.htm",
+      "version": "Page officielle COCO",
+      "section": "Detection evaluation metrics",
+      "heading": "AP, AP50 et seuils d'IoU",
+      "text": "L'AP principale COCO pour les boîtes moyenne les performances sur dix seuils d'IoU allant de 0,50 à 0,95 par pas de 0,05. AP50 utilise le seuil de 0,50, et AP75 utilise celui de 0,75. Les seuils élevés rendent la mesure plus sensible au placement précis des boîtes."
+    },
+    {
+      "id": "coco-eval",
+      "title": "COCO API — COCOeval",
+      "url": "https://github.com/cocodataset/cocoapi/blob/master/PythonAPI/pycocotools/cocoeval.py",
+      "version": "Code de référence COCO API",
+      "section": "Params.setDetParams, evaluate, accumulate, summarize",
+      "heading": "Limites de détections et rappel COCOeval",
+      "text": "COCOeval évalue les prédictions par image, agrège les résultats puis résume les métriques. Pour les boîtes, maxDets est configuré à 1, 10 et 100. L'AP principale utilise la limite de 100 et la grille de rappel comporte 101 points de zéro à un."
+    },
+    {
+      "id": "boxes",
+      "title": "Torchvision — box_convert",
+      "url": "https://docs.pytorch.org/vision/0.20/generated/torchvision.ops.box_convert.html",
+      "version": "Torchvision 0.20",
+      "section": "Supported formats",
+      "heading": "Conversion des coordonnées xyxy vers xywh",
+      "text": "En xyxy, la boîte est donnée par les coordonnées de deux coins. En xywh, le premier coin est suivi de la largeur et de la hauteur. La conversion conserve x1 et y1, puis calcule largeur = x2 − x1 et hauteur = y2 − y1."
+    },
+    {
+      "id": "iou",
+      "title": "Torchvision — box_iou",
+      "url": "https://docs.pytorch.org/vision/0.20/generated/torchvision.ops.box_iou.html",
+      "version": "Torchvision 0.20",
+      "section": "box_iou",
+      "heading": "Intersection sur union entre deux boîtes",
+      "text": "L'IoU est le rapport entre l'aire d'intersection de deux boîtes et l'aire de leur union. Deux boîtes disjointes ont une IoU nulle. À géométrie identique et aire positive, l'IoU vaut un."
+    },
+    {
+      "id": "nms",
+      "title": "Torchvision — nms",
+      "url": "https://docs.pytorch.org/vision/0.20/generated/torchvision.ops.nms.html",
+      "version": "Torchvision 0.20",
+      "section": "nms",
+      "heading": "Suppression non maximale des boîtes redondantes",
+      "text": "La NMS réduit les boîtes redondantes en examinant les scores et le chevauchement. Une boîte de score plus faible peut être supprimée si son IoU avec une boîte retenue de meilleur score dépasse le seuil. Cette opération intervient dans le post-traitement."
+    },
+    {
+      "id": "warmup",
+      "title": "PyTorch — Benchmark Utils",
+      "url": "https://docs.pytorch.org/docs/main/utils/benchmark.html",
+      "version": "Documentation main",
+      "section": "Timer",
+      "heading": "Échauffement avant les mesures",
+      "text": "Le warm-up, ou échauffement, exécute la charge avant de chronométrer. Il sépare des mesures les coûts d'initialisation paresseuse. L'outil de benchmark PyTorch prévoit cet échauffement et prend en compte la synchronisation des accélérateurs."
+    }
+  ]
+}

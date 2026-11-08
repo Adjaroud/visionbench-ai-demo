@@ -1,0 +1,131 @@
+{
+  "kind": "recorded",
+  "model": "qwen3:4b",
+  "campaign_date": "2026-11-05",
+  "case_id": "NC3",
+  "repeat": 1,
+  "source_run_sha256": "308d6ebf78327bf253190a33f665bc6d8a28475df6fed9765b175acd6d7aa9f6",
+  "source_protocol_sha256": "e7f82d650db2a23991c8912c64f209025d422fa9ec2d7cfe6625ea12f1b3411b",
+  "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "report": {
+    "request": {
+      "text": "Récupère et vérifie pipeline_median et pipeline_p95 pour les deux pipelines du pilote.",
+      "metrics": [
+        "pipeline_median",
+        "pipeline_p95"
+      ],
+      "gpu": "RTX 3050 Laptop",
+      "p95_limit_ms": null,
+      "memory_limit_mib": null,
+      "ap_min": null,
+      "p95_strict": false,
+      "memory_strict": false,
+      "ap_strict": false
+    },
+    "mode": "agent",
+    "model": "qwen3:4b",
+    "status": "measurements_available",
+    "stop_reason": "completed",
+    "model_calls": 3,
+    "planner_error_detail": null,
+    "duration_s": 13.828,
+    "trace": [
+      {
+        "tool": "query_benchmarks",
+        "status": "ok"
+      },
+      {
+        "tool": "check_comparability",
+        "status": "ok"
+      }
+    ],
+    "documents": [],
+    "measurements": [
+      {
+        "model": "fasterrcnn_mobilenet_v3_large_320_fpn",
+        "metric": "pipeline_median",
+        "value": 15.151100000366569,
+        "unit": "ms",
+        "scope": "j2_pilot_native_pipelines",
+        "image_count": 3,
+        "source_path": "j2_latency_pilot.json",
+        "source_sha256": "fda0bcbc6d5c9324c5e29229950519c89eef83834c71850a23e0759adc3e7b35",
+        "weights_sha256": "907ea3f91ff92242bc1baea8049276a3e76bca48ce7560bd268cc029f37977b5",
+        "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+      },
+      {
+        "model": "ssdlite320_mobilenet_v3_large",
+        "metric": "pipeline_median",
+        "value": 49.46650000056252,
+        "unit": "ms",
+        "scope": "j2_pilot_native_pipelines",
+        "image_count": 3,
+        "source_path": "j2_latency_pilot.json",
+        "source_sha256": "fda0bcbc6d5c9324c5e29229950519c89eef83834c71850a23e0759adc3e7b35",
+        "weights_sha256": "a79551df90c79834bcd3bb3845ef9d966b5449a3a9b2833ae8404778ca5d65d2",
+        "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+      },
+      {
+        "model": "fasterrcnn_mobilenet_v3_large_320_fpn",
+        "metric": "pipeline_p95",
+        "value": 21.12360007595271,
+        "unit": "ms",
+        "scope": "j2_pilot_native_pipelines",
+        "image_count": 3,
+        "source_path": "j2_latency_pilot.json",
+        "source_sha256": "fda0bcbc6d5c9324c5e29229950519c89eef83834c71850a23e0759adc3e7b35",
+        "weights_sha256": "907ea3f91ff92242bc1baea8049276a3e76bca48ce7560bd268cc029f37977b5",
+        "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+      },
+      {
+        "model": "ssdlite320_mobilenet_v3_large",
+        "metric": "pipeline_p95",
+        "value": 67.02319998294115,
+        "unit": "ms",
+        "scope": "j2_pilot_native_pipelines",
+        "image_count": 3,
+        "source_path": "j2_latency_pilot.json",
+        "source_sha256": "fda0bcbc6d5c9324c5e29229950519c89eef83834c71850a23e0759adc3e7b35",
+        "weights_sha256": "a79551df90c79834bcd3bb3845ef9d966b5449a3a9b2833ae8404778ca5d65d2",
+        "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+      }
+    ],
+    "available_gpus": [
+      "NVIDIA GeForce RTX 3050 Laptop GPU"
+    ],
+    "comparisons": {
+      "pipeline_median": {
+        "comparable": true,
+        "reasons": [],
+        "scope": "j2_pilot_native_pipelines"
+      },
+      "pipeline_p95": {
+        "comparable": true,
+        "reasons": [],
+        "scope": "j2_pilot_native_pipelines"
+      }
+    },
+    "recommendation": null,
+    "proposed_experiment": null,
+    "llm_usage": [
+      {
+        "prompt_tokens": 273,
+        "generated_tokens": 10,
+        "load_duration_ns": 7352000,
+        "total_duration_ns": 4232179700
+      },
+      {
+        "prompt_tokens": 281,
+        "generated_tokens": 13,
+        "load_duration_ns": 4538100,
+        "total_duration_ns": 3299357900
+      },
+      {
+        "prompt_tokens": 350,
+        "generated_tokens": 10,
+        "load_duration_ns": 4013400,
+        "total_duration_ns": 4308637800
+      }
+    ]
+  }
+}

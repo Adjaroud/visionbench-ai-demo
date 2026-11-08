@@ -1,0 +1,13 @@
+{
+  "kind": "resource_catalog_manifest",
+  "database_sha256": "530a07ccb94f47cfb15e0e747a4fc107f9e4fc0e4dd891e21ed9977a815c9436",
+  "source_sha256": {
+    "resources_100/raw.json": "9c2d8eae74c007efb6901601fc15bf9d359882f26639a6c818ae9f4c2c4b2ec8",
+    "resources_100/summary.json": "64aaf3fee9b38fe9fb3e94cd0d4769bfd3600599365daf1a13a3cbe3a72c7232",
+    "resources_100/plan.json": "2be93bd481aaff07267d6d939ba8289750438c5f7f02dd82e5c78f666fd31f29",
+    "j2_coco_eval/metrics.json": "6eecf096cae28cc9a19e4245eacd7a35ea46824b643b0505ae73306e432023c9"
+  },
+  "measurements": 12,
+  "aggregation": "Pooled p95 on 400 observations per model; 100 distinct images, 4 sessions.",
+  "limitation": "Le p95 global ne garantit pas le respect de la même borne dans chaque session."
+}

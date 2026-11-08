@@ -1,0 +1,86 @@
+{
+  "kind": "recorded",
+  "model": "qwen3:4b",
+  "campaign_date": "2026-11-05",
+  "case_id": "NM3",
+  "repeat": 1,
+  "source_run_sha256": "c378c36ba4146d8bfebf3b07cea0a9d18de26cedb5f12768735b437bab0e02b5",
+  "source_protocol_sha256": "e7f82d650db2a23991c8912c64f209025d422fa9ec2d7cfe6625ea12f1b3411b",
+  "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "report": {
+    "request": {
+      "text": "Quelles mesures de pipeline_p95 trouve-t-on sur le matériel indiqué ?",
+      "metrics": [
+        "pipeline_p95"
+      ],
+      "gpu": "RTX 3050 Ti Laptop",
+      "p95_limit_ms": null,
+      "memory_limit_mib": null,
+      "ap_min": null,
+      "p95_strict": false,
+      "memory_strict": false,
+      "ap_strict": false
+    },
+    "mode": "agent",
+    "model": "qwen3:4b",
+    "status": "insufficient_evidence",
+    "stop_reason": "completed",
+    "model_calls": 2,
+    "planner_error_detail": null,
+    "duration_s": 8.141,
+    "trace": [
+      {
+        "tool": "query_benchmarks",
+        "status": "ok"
+      },
+      {
+        "tool": "search_documents",
+        "status": "ok"
+      },
+      {
+        "tool": "check_comparability",
+        "status": "ok"
+      },
+      {
+        "tool": "propose_experiment",
+        "status": "ok"
+      }
+    ],
+    "documents": [],
+    "measurements": [],
+    "available_gpus": [
+      "NVIDIA GeForce RTX 3050 Laptop GPU"
+    ],
+    "comparisons": {
+      "pipeline_p95": {
+        "comparable": false,
+        "reasons": [
+          "Deux mesures vérifiées sont nécessaires."
+        ],
+        "scope": null
+      }
+    },
+    "recommendation": null,
+    "proposed_experiment": {
+      "gpu_requested": "RTX 3050 Ti Laptop",
+      "metrics": [
+        "pipeline_p95"
+      ],
+      "protocol": "Tester les deux détecteurs sur les mêmes images, en FP32 et batch 1. Documenter poids, réglages natifs et versions. Pour la latence, utiliser le même chronomètre avec échauffement et alternance. Pour l’AP, utiliser le même jeu annoté et COCOeval."
+    },
+    "llm_usage": [
+      {
+        "prompt_tokens": 266,
+        "generated_tokens": 10,
+        "load_duration_ns": 4112700,
+        "total_duration_ns": 4105747100
+      },
+      {
+        "prompt_tokens": 265,
+        "generated_tokens": 8,
+        "load_duration_ns": 3723300,
+        "total_duration_ns": 2403496600
+      }
+    ]
+  }
+}

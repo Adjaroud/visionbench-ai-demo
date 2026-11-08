@@ -1,0 +1,34 @@
+{
+  "created_at_utc": "2026-11-05T09:37:35.642335+00:00",
+  "protocol": {
+    "models": {
+      "llama3.1:8b": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
+      "qwen3:4b": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7"
+    },
+    "repeats": 3,
+    "source_sha256": {
+      "eval\\model_comparison_cases.json": "1641722031f40ef67f0a55d98c0e268d489657c855f5f9bf456a44217896ae08",
+      "data\\corpus\\vision_docs.json": "4ea20914f41665cdb75d9419da50f6613e7ccb4c932dd53203ee6c8b30dfb426",
+      "reports\\visionbench.sqlite": "bf0d38d3deb1454f6e6d8f46d83e0e8d483aa66e13cb3aaa2562f8341e301a49",
+      "reports\\j2_coco_eval\\metrics.json": "6eecf096cae28cc9a19e4245eacd7a35ea46824b643b0505ae73306e432023c9",
+      "reports\\j2_latency_pilot.json": "fda0bcbc6d5c9324c5e29229950519c89eef83834c71850a23e0759adc3e7b35",
+      "src\\visionbench\\benchmarks\\compare_detectors.py": "bd6a18ca724138b99ede5be401de540db30be923e49f9847890a55d712eb3299",
+      "src\\visionbench\\benchmarks\\evaluate_coco.py": "04b724451bfa19677eacf9536bc4a53ad1f5ea9194b8ad0d889571e694c52c09",
+      "src\\visionbench\\benchmarks\\first_benchmark.py": "2f05ec6e20edd8cd55dd4a964691ec8eb743958e03edd0ab0d0e739fb3d14119",
+      "src\\visionbench\\evaluation\\compare_models.py": "b08b0b0cb8fce5215b2a82ba1552f8e499c3c1919a45e630e1251f6d8ac78c75",
+      "src\\visionbench\\evaluation\\run_campaign.py": "d1063c19a8c2b55ac249ef12b63745518a94477ae42a3d785cb655eb90cb66bf",
+      "src\\visionbench\\orchestration\\constraints.py": "ad25900e3887c9f6b959f22e501fe7966a42fee2b4cd39e60f692492b4c24422",
+      "src\\visionbench\\orchestration\\tools.py": "48149e1a472b0ef380fa4873a28453ac684221eef9bcccc988ef040ee0b89ce0",
+      "src\\visionbench\\orchestration\\workflow.py": "99bdfd0a02f119993110faaf905b522c15d511f57d3acc8a53e5e4fe2888db8b",
+      "src\\visionbench\\retrieval\\document_search.py": "3d6eef3ddf4f68da9c1b69acf68418086af0ab057bd2e09cfa3125245226a585",
+      "src\\visionbench\\retrieval\\evaluate_retrieval.py": "b0b2de0dd02be6c7268bacaa9d9e1bb88401b19aa47db4405797d655e13f3164",
+      "src\\visionbench\\storage\\benchmark_store.py": "7ecaaae60e19b572a19c7038fb08e84750e2a1fcc8f44f89647c2d2c7a7a7853"
+    },
+    "ollama_version": "0.34.2",
+    "num_gpu": 0,
+    "think": false,
+    "context": 2048,
+    "output_tokens": 48,
+    "order": "fixed, then alternating model blocks per repeat; unload between blocks"
+  }
+}

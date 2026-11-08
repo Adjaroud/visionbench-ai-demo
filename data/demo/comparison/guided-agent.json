@@ -1,0 +1,745 @@
+{
+  "evaluation": {
+    "id": "adaptive_search",
+    "group": "preuves_ambiguite",
+    "mode": "agent",
+    "repeat": 1,
+    "execution": "live",
+    "checks": {
+      "stop": true,
+      "budget": true,
+      "recommendation": true,
+      "definition": true
+    },
+    "passed": true,
+    "duration_s": 63.75,
+    "calls": 3,
+    "tokens": 206
+  },
+  "result": {
+    "created_at_utc": "2026-11-08T14:27:44.778911+00:00",
+    "kind": "agent_mixed_answer_development_demo",
+    "workflow_report": {
+      "request": {
+        "text": "Quel détecteur est admissible sur le GPU demandé ? Compare les AP et définis la mémoire PyTorch allouée.",
+        "metrics": [
+          "ap",
+          "pipeline_p95",
+          "peak_pytorch_allocated"
+        ],
+        "gpu": "RTX 3050 Laptop",
+        "p95_limit_ms": 120,
+        "memory_limit_mib": 130,
+        "ap_min": null,
+        "p95_strict": false,
+        "memory_strict": false,
+        "ap_strict": false
+      },
+      "mode": "agent",
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "status": "measurements_available",
+      "stop_reason": "completed",
+      "model_calls": 2,
+      "planner_error_detail": null,
+      "duration_s": 58.156,
+      "trace": [
+        {
+          "tool": "query_benchmarks",
+          "status": "ok"
+        },
+        {
+          "tool": "check_comparability",
+          "status": "ok"
+        },
+        {
+          "tool": "search_documents",
+          "status": "ok",
+          "query": "définition de la mémoire allouée par PyTorch dans les pipelines de détection",
+          "accepted_ids": [
+            "lexical-decoy-1",
+            "lexical-decoy-2",
+            "lexical-decoy-3"
+          ]
+        },
+        {
+          "tool": "search_documents",
+          "status": "ok",
+          "query": "définition de max_memory_allocated dans PyTorch pour les détecteurs de vision",
+          "accepted_ids": [
+            "lexical-decoy-4",
+            "memory-allocated",
+            "memory-reserved"
+          ],
+          "excluded_ids": [
+            "lexical-decoy-1",
+            "lexical-decoy-2",
+            "lexical-decoy-3"
+          ]
+        }
+      ],
+      "documents": [
+        {
+          "id": "lexical-decoy-1",
+          "title": "Fiche synthétique de contexte",
+          "url": "https://docs.pytorch.org/docs/main/generated/torch.cuda.max_memory_allocated.html",
+          "version": "Simulation de recherche",
+          "section": "Contexte 1",
+          "heading": "Pic mémoire allouée tenseurs PyTorch max_memory_allocated et AP détecteur",
+          "text": "Le protocole note le pic mémoire allouée tenseurs PyTorch max_memory_allocated et le détecteur. Ce passage sert à comparer les AP et la mémoire PyTorch allouée sur le GPU demandé. La définition de max_memory_allocated figure dans une autre fiche.",
+          "score": 6.723682244582324,
+          "matched_terms": [
+            "allouee",
+            "definition",
+            "memoire",
+            "pytorch"
+          ]
+        },
+        {
+          "id": "lexical-decoy-2",
+          "title": "Fiche synthétique de contexte",
+          "url": "https://docs.pytorch.org/docs/main/generated/torch.cuda.max_memory_allocated.html",
+          "version": "Simulation de recherche",
+          "section": "Contexte 2",
+          "heading": "Pic mémoire allouée tenseurs PyTorch max_memory_allocated et AP détecteur",
+          "text": "Le protocole note le pic mémoire allouée tenseurs PyTorch max_memory_allocated et le détecteur. Ce passage sert à comparer les AP et la mémoire PyTorch allouée sur le GPU demandé. La définition de max_memory_allocated figure dans une autre fiche.",
+          "score": 6.723682244582324,
+          "matched_terms": [
+            "allouee",
+            "definition",
+            "memoire",
+            "pytorch"
+          ]
+        },
+        {
+          "id": "lexical-decoy-3",
+          "title": "Fiche synthétique de contexte",
+          "url": "https://docs.pytorch.org/docs/main/generated/torch.cuda.max_memory_allocated.html",
+          "version": "Simulation de recherche",
+          "section": "Contexte 3",
+          "heading": "Pic mémoire allouée tenseurs PyTorch max_memory_allocated et AP détecteur",
+          "text": "Le protocole note le pic mémoire allouée tenseurs PyTorch max_memory_allocated et le détecteur. Ce passage sert à comparer les AP et la mémoire PyTorch allouée sur le GPU demandé. La définition de max_memory_allocated figure dans une autre fiche.",
+          "score": 6.723682244582324,
+          "matched_terms": [
+            "allouee",
+            "definition",
+            "memoire",
+            "pytorch"
+          ]
+        },
+        {
+          "id": "lexical-decoy-4",
+          "title": "Fiche synthétique de contexte",
+          "url": "https://docs.pytorch.org/docs/main/generated/torch.cuda.max_memory_allocated.html",
+          "version": "Simulation de recherche",
+          "section": "Contexte 4",
+          "heading": "Pic mémoire allouée tenseurs PyTorch max_memory_allocated et AP détecteur",
+          "text": "Le protocole note le pic mémoire allouée tenseurs PyTorch max_memory_allocated et le détecteur. Ce passage sert à comparer les AP et la mémoire PyTorch allouée sur le GPU demandé. La définition de max_memory_allocated figure dans une autre fiche.",
+          "score": 7.708431423291085,
+          "matched_terms": [
+            "allocated",
+            "definition",
+            "max",
+            "memory",
+            "pytorch"
+          ]
+        },
+        {
+          "id": "memory-allocated",
+          "title": "PyTorch — max_memory_allocated",
+          "url": "https://docs.pytorch.org/docs/main/generated/torch.cuda.max_memory_allocated.html",
+          "version": "Documentation main",
+          "section": "max_memory_allocated",
+          "heading": "Pic CUDA des tenseurs actifs",
+          "text": "max_memory_allocated indique le maximum d’octets CUDA occupés par les tenseurs actifs. Les blocs libres mis en cache relèvent de max_memory_reserved.",
+          "score": 4.408023987485215,
+          "matched_terms": [
+            "allocated",
+            "max",
+            "memory"
+          ]
+        },
+        {
+          "id": "memory-reserved",
+          "title": "PyTorch — max_memory_reserved",
+          "url": "https://docs.pytorch.org/docs/main/generated/torch.cuda.max_memory_reserved.html",
+          "version": "Documentation main",
+          "section": "max_memory_reserved",
+          "heading": "Pic de mémoire réservée par l'allocateur",
+          "text": "max_memory_reserved indique le pic de mémoire GPU gérée par l'allocateur de cache de PyTorch, en octets. La mémoire réservée peut inclure de l'espace inutilisé par les tenseurs mais gardé pour des allocations futures. Ce compteur concerne l'allocateur PyTorch.",
+          "score": 3.4914867421299167,
+          "matched_terms": [
+            "max",
+            "memory",
+            "pytorch"
+          ]
+        }
+      ],
+      "measurements": [
+        {
+          "model": "fasterrcnn_mobilenet_v3_large_320_fpn",
+          "metric": "ap",
+          "value": 0.25941777415256934,
+          "unit": "fraction",
+          "scope": "coco2017_bbox_subset",
+          "image_count": 500,
+          "source_path": "j2_coco_eval/metrics.json",
+          "source_sha256": "6eecf096cae28cc9a19e4245eacd7a35ea46824b643b0505ae73306e432023c9",
+          "weights_sha256": "907ea3f91ff92242bc1baea8049276a3e76bca48ce7560bd268cc029f37977b5",
+          "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+        },
+        {
+          "model": "ssdlite320_mobilenet_v3_large",
+          "metric": "ap",
+          "value": 0.24088946891940405,
+          "unit": "fraction",
+          "scope": "coco2017_bbox_subset",
+          "image_count": 500,
+          "source_path": "j2_coco_eval/metrics.json",
+          "source_sha256": "6eecf096cae28cc9a19e4245eacd7a35ea46824b643b0505ae73306e432023c9",
+          "weights_sha256": "a79551df90c79834bcd3bb3845ef9d966b5449a3a9b2833ae8404778ca5d65d2",
+          "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+        },
+        {
+          "model": "fasterrcnn_mobilenet_v3_large_320_fpn",
+          "metric": "pipeline_p95",
+          "value": 32.39990002475679,
+          "unit": "ms",
+          "scope": "native_pipelines_coco100_sessions4_pooled",
+          "image_count": 100,
+          "source_path": "resources_100/raw.json",
+          "source_sha256": "9c2d8eae74c007efb6901601fc15bf9d359882f26639a6c818ae9f4c2c4b2ec8",
+          "weights_sha256": "907ea3f91ff92242bc1baea8049276a3e76bca48ce7560bd268cc029f37977b5",
+          "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+        },
+        {
+          "model": "ssdlite320_mobilenet_v3_large",
+          "metric": "pipeline_p95",
+          "value": 105.178999947384,
+          "unit": "ms",
+          "scope": "native_pipelines_coco100_sessions4_pooled",
+          "image_count": 100,
+          "source_path": "resources_100/raw.json",
+          "source_sha256": "9c2d8eae74c007efb6901601fc15bf9d359882f26639a6c818ae9f4c2c4b2ec8",
+          "weights_sha256": "a79551df90c79834bcd3bb3845ef9d966b5449a3a9b2833ae8404778ca5d65d2",
+          "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+        },
+        {
+          "model": "fasterrcnn_mobilenet_v3_large_320_fpn",
+          "metric": "peak_pytorch_allocated",
+          "value": 117.15673828125,
+          "unit": "MiB",
+          "scope": "native_pipelines_coco100_sessions4_pooled",
+          "image_count": 100,
+          "source_path": "resources_100/raw.json",
+          "source_sha256": "9c2d8eae74c007efb6901601fc15bf9d359882f26639a6c818ae9f4c2c4b2ec8",
+          "weights_sha256": "907ea3f91ff92242bc1baea8049276a3e76bca48ce7560bd268cc029f37977b5",
+          "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+        },
+        {
+          "model": "ssdlite320_mobilenet_v3_large",
+          "metric": "peak_pytorch_allocated",
+          "value": 41.39111328125,
+          "unit": "MiB",
+          "scope": "native_pipelines_coco100_sessions4_pooled",
+          "image_count": 100,
+          "source_path": "resources_100/raw.json",
+          "source_sha256": "9c2d8eae74c007efb6901601fc15bf9d359882f26639a6c818ae9f4c2c4b2ec8",
+          "weights_sha256": "a79551df90c79834bcd3bb3845ef9d966b5449a3a9b2833ae8404778ca5d65d2",
+          "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+        }
+      ],
+      "available_gpus": [
+        "NVIDIA GeForce RTX 3050 Laptop GPU"
+      ],
+      "comparisons": {
+        "ap": {
+          "comparable": true,
+          "reasons": [],
+          "scope": "coco2017_bbox_subset"
+        },
+        "pipeline_p95": {
+          "comparable": true,
+          "reasons": [],
+          "scope": "native_pipelines_coco100_sessions4_pooled"
+        },
+        "peak_pytorch_allocated": {
+          "comparable": true,
+          "reasons": [],
+          "scope": "native_pipelines_coco100_sessions4_pooled"
+        }
+      },
+      "recommendation": {
+        "status": "pilot_candidate",
+        "candidate": "fasterrcnn_mobilenet_v3_large_320_fpn",
+        "eligible": [
+          "fasterrcnn_mobilenet_v3_large_320_fpn",
+          "ssdlite320_mobilenet_v3_large"
+        ],
+        "p95_limit_ms": 120,
+        "memory_limit_mib": 130,
+        "ap_min": null,
+        "scope": "AP sur COCO et latence sur le pilote. Confirmer la latence sur la charge cible."
+      },
+      "proposed_experiment": null,
+      "searches": [
+        {
+          "query": "définition de la mémoire allouée par PyTorch dans les pipelines de détection",
+          "accepted_ids": [
+            "lexical-decoy-1",
+            "lexical-decoy-2",
+            "lexical-decoy-3"
+          ]
+        },
+        {
+          "query": "définition de max_memory_allocated dans PyTorch pour les détecteurs de vision",
+          "accepted_ids": [
+            "lexical-decoy-4",
+            "memory-allocated",
+            "memory-reserved"
+          ],
+          "excluded_ids": [
+            "lexical-decoy-1",
+            "lexical-decoy-2",
+            "lexical-decoy-3"
+          ]
+        }
+      ],
+      "decisions": [
+        {
+          "action": "query_benchmarks",
+          "query": null,
+          "reason": "Prérequis numérique obligatoire.",
+          "origin": "python",
+          "options": [
+            "query_benchmarks",
+            "search_documents"
+          ]
+        },
+        {
+          "action": "check_comparability",
+          "query": null,
+          "reason": "Prérequis numérique obligatoire.",
+          "origin": "python",
+          "options": [
+            "check_comparability",
+            "search_documents"
+          ]
+        },
+        {
+          "action": "search_documents",
+          "query": "définition de la mémoire allouée par PyTorch dans les pipelines de détection",
+          "reason": "La mémoire allouée par PyTorch n'est pas définie dans les observations, il est nécessaire de trouver une source technique pour comprendre ce qu'elle représente dans le contexte des mesures.",
+          "origin": "llm",
+          "options": [
+            "search_documents"
+          ]
+        },
+        {
+          "action": "search_documents",
+          "query": "définition de max_memory_allocated dans PyTorch pour les détecteurs de vision",
+          "reason": "La mémoire PyTorch allouée est référencée sous max_memory_allocated, mais sa définition n'est pas disponible dans les observations. Une recherche ciblée est nécessaire pour identifier ce qu'elle représente dans le contexte des détecteurs.",
+          "origin": "llm",
+          "options": [
+            "search_documents"
+          ]
+        },
+        {
+          "action": "finish",
+          "query": null,
+          "reason": "Collecte terminée ; aucune autre action autorisée.",
+          "origin": "python",
+          "options": [
+            "finish"
+          ]
+        }
+      ],
+      "documentary_coverage": {
+        "memory_definition_found": true,
+        "searches_used": 2,
+        "searches_limit": 3
+      }
+    },
+    "planning_calls": [
+      {
+        "status": "received",
+        "response_received": true,
+        "raw_content": "{\"action\": \"search_documents\", \"query\": \"définition de la mémoire allouée par PyTorch dans les pipelines de détection\", \"reason\": \"La mémoire allouée par PyTorch n'est pas définie dans les observations, il est nécessaire de trouver une source technique pour comprendre ce qu'elle représente dans le contexte des mesures.\"}",
+        "prompt_tokens": 1050,
+        "generated_tokens": 80,
+        "total_duration_ns": 24796948600,
+        "done_reason": "stop"
+      },
+      {
+        "status": "received",
+        "response_received": true,
+        "raw_content": "{\"action\": \"search_documents\", \"query\": \"définition de max_memory_allocated dans PyTorch pour les détecteurs de vision\", \"reason\": \"La mémoire PyTorch allouée est référencée sous max_memory_allocated, mais sa définition n'est pas disponible dans les observations. Une recherche ciblée est nécessaire pour identifier ce qu'elle représente dans le contexte des détecteurs.\"}",
+        "prompt_tokens": 1378,
+        "generated_tokens": 88,
+        "total_duration_ns": 32809246600,
+        "done_reason": "stop"
+      }
+    ],
+    "synthesis": {
+      "status": "generated",
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "model_calls": 1,
+      "response_received": true,
+      "claims": [
+        {
+          "kind": "decision",
+          "origin": "python",
+          "text": "Faster R-CNN respecte les bornes et est le candidat retenu par Python. Mesures du candidat : Faster R-CNN : AP principale = 25.94 %. Faster R-CNN : pic de mémoire PyTorch allouée = 117.16 Mio. Faster R-CNN : latence pipeline p95 = 32.40 ms.",
+          "citations": [
+            "V1"
+          ]
+        },
+        {
+          "kind": "measurement",
+          "origin": "python",
+          "text": "L'AP de Faster R-CNN (25.94 %) est supérieure à celle de SSDLite (24.09 %).",
+          "citations": [
+            "R1"
+          ]
+        },
+        {
+          "kind": "measurement",
+          "origin": "python",
+          "text": "Les modèles mesurés respectent les bornes demandées.",
+          "citations": [
+            "R2"
+          ]
+        },
+        {
+          "kind": "documentary",
+          "citations": [
+            "D5"
+          ],
+          "text": "max_memory_allocated indique le maximum d’octets CUDA occupés par les tenseurs actifs.",
+          "origin": "llm"
+        }
+      ],
+      "context": {
+        "question": "Quel détecteur est admissible sur le GPU demandé ? Compare les AP et définis la mémoire PyTorch allouée.",
+        "decision_verified": {
+          "decision_status": "pilot_candidate",
+          "candidate": "fasterrcnn_mobilenet_v3_large_320_fpn"
+        },
+        "definition_source_id": "D5",
+        "evidence": [
+          {
+            "id": "C1",
+            "kind": "constraint",
+            "text": "GPU demandé : RTX 3050 Laptop; p95 ≤ 120.00 ms; mémoire allouée ≤ 130.00 Mio",
+            "source": {
+              "type": "validated_request",
+              "bounds": {
+                "text": "Quel détecteur est admissible sur le GPU demandé ? Compare les AP et définis la mémoire PyTorch allouée.",
+                "metrics": [
+                  "ap",
+                  "pipeline_p95",
+                  "peak_pytorch_allocated"
+                ],
+                "gpu": "RTX 3050 Laptop",
+                "p95_limit_ms": 120,
+                "memory_limit_mib": 130,
+                "ap_min": null,
+                "p95_strict": false,
+                "memory_strict": false,
+                "ap_strict": false
+              }
+            }
+          },
+          {
+            "id": "V1",
+            "kind": "decision",
+            "text": "Faster R-CNN respecte les bornes et est le candidat retenu par Python. Mesures du candidat : Faster R-CNN : AP principale = 25.94 %. Faster R-CNN : pic de mémoire PyTorch allouée = 117.16 Mio. Faster R-CNN : latence pipeline p95 = 32.40 ms.",
+            "source": {
+              "type": "python_decision",
+              "comparisons": {
+                "ap": {
+                  "comparable": true,
+                  "reasons": [],
+                  "scope": "coco2017_bbox_subset"
+                },
+                "pipeline_p95": {
+                  "comparable": true,
+                  "reasons": [],
+                  "scope": "native_pipelines_coco100_sessions4_pooled"
+                },
+                "peak_pytorch_allocated": {
+                  "comparable": true,
+                  "reasons": [],
+                  "scope": "native_pipelines_coco100_sessions4_pooled"
+                }
+              },
+              "inputs": [
+                "C1",
+                "M1",
+                "M2",
+                "M3",
+                "M4",
+                "M5",
+                "M6"
+              ]
+            }
+          },
+          {
+            "id": "M1",
+            "kind": "measurement",
+            "text": "Faster R-CNN : AP principale = 25.94 %. Campagne sur 500 images.",
+            "source": {
+              "model": "fasterrcnn_mobilenet_v3_large_320_fpn",
+              "metric": "ap",
+              "value": 0.25941777415256934,
+              "unit": "fraction",
+              "scope": "coco2017_bbox_subset",
+              "image_count": 500,
+              "source_path": "j2_coco_eval/metrics.json",
+              "source_sha256": "6eecf096cae28cc9a19e4245eacd7a35ea46824b643b0505ae73306e432023c9",
+              "weights_sha256": "907ea3f91ff92242bc1baea8049276a3e76bca48ce7560bd268cc029f37977b5",
+              "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+            }
+          },
+          {
+            "id": "M2",
+            "kind": "measurement",
+            "text": "Faster R-CNN : pic de mémoire PyTorch allouée = 117.16 Mio. Campagne sur 100 images.",
+            "source": {
+              "model": "fasterrcnn_mobilenet_v3_large_320_fpn",
+              "metric": "peak_pytorch_allocated",
+              "value": 117.15673828125,
+              "unit": "MiB",
+              "scope": "native_pipelines_coco100_sessions4_pooled",
+              "image_count": 100,
+              "source_path": "resources_100/raw.json",
+              "source_sha256": "9c2d8eae74c007efb6901601fc15bf9d359882f26639a6c818ae9f4c2c4b2ec8",
+              "weights_sha256": "907ea3f91ff92242bc1baea8049276a3e76bca48ce7560bd268cc029f37977b5",
+              "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+            }
+          },
+          {
+            "id": "M3",
+            "kind": "measurement",
+            "text": "Faster R-CNN : latence pipeline p95 = 32.40 ms. Campagne sur 100 images.",
+            "source": {
+              "model": "fasterrcnn_mobilenet_v3_large_320_fpn",
+              "metric": "pipeline_p95",
+              "value": 32.39990002475679,
+              "unit": "ms",
+              "scope": "native_pipelines_coco100_sessions4_pooled",
+              "image_count": 100,
+              "source_path": "resources_100/raw.json",
+              "source_sha256": "9c2d8eae74c007efb6901601fc15bf9d359882f26639a6c818ae9f4c2c4b2ec8",
+              "weights_sha256": "907ea3f91ff92242bc1baea8049276a3e76bca48ce7560bd268cc029f37977b5",
+              "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+            }
+          },
+          {
+            "id": "M4",
+            "kind": "measurement",
+            "text": "SSDLite : AP principale = 24.09 %. Campagne sur 500 images.",
+            "source": {
+              "model": "ssdlite320_mobilenet_v3_large",
+              "metric": "ap",
+              "value": 0.24088946891940405,
+              "unit": "fraction",
+              "scope": "coco2017_bbox_subset",
+              "image_count": 500,
+              "source_path": "j2_coco_eval/metrics.json",
+              "source_sha256": "6eecf096cae28cc9a19e4245eacd7a35ea46824b643b0505ae73306e432023c9",
+              "weights_sha256": "a79551df90c79834bcd3bb3845ef9d966b5449a3a9b2833ae8404778ca5d65d2",
+              "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+            }
+          },
+          {
+            "id": "M5",
+            "kind": "measurement",
+            "text": "SSDLite : pic de mémoire PyTorch allouée = 41.39 Mio. Campagne sur 100 images.",
+            "source": {
+              "model": "ssdlite320_mobilenet_v3_large",
+              "metric": "peak_pytorch_allocated",
+              "value": 41.39111328125,
+              "unit": "MiB",
+              "scope": "native_pipelines_coco100_sessions4_pooled",
+              "image_count": 100,
+              "source_path": "resources_100/raw.json",
+              "source_sha256": "9c2d8eae74c007efb6901601fc15bf9d359882f26639a6c818ae9f4c2c4b2ec8",
+              "weights_sha256": "a79551df90c79834bcd3bb3845ef9d966b5449a3a9b2833ae8404778ca5d65d2",
+              "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+            }
+          },
+          {
+            "id": "M6",
+            "kind": "measurement",
+            "text": "SSDLite : latence pipeline p95 = 105.18 ms. Campagne sur 100 images.",
+            "source": {
+              "model": "ssdlite320_mobilenet_v3_large",
+              "metric": "pipeline_p95",
+              "value": 105.178999947384,
+              "unit": "ms",
+              "scope": "native_pipelines_coco100_sessions4_pooled",
+              "image_count": 100,
+              "source_path": "resources_100/raw.json",
+              "source_sha256": "9c2d8eae74c007efb6901601fc15bf9d359882f26639a6c818ae9f4c2c4b2ec8",
+              "weights_sha256": "a79551df90c79834bcd3bb3845ef9d966b5449a3a9b2833ae8404778ca5d65d2",
+              "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+            }
+          },
+          {
+            "id": "R1",
+            "kind": "calculation",
+            "text": "L'AP de Faster R-CNN (25.94 %) est supérieure à celle de SSDLite (24.09 %).",
+            "source": {
+              "type": "python_ap_order",
+              "inputs": [
+                "M1",
+                "M4"
+              ],
+              "ordered_models": [
+                "fasterrcnn_mobilenet_v3_large_320_fpn",
+                "ssdlite320_mobilenet_v3_large"
+              ]
+            }
+          },
+          {
+            "id": "R2",
+            "kind": "calculation",
+            "text": "Les modèles mesurés respectent les bornes demandées.",
+            "source": {
+              "type": "python_failed_bounds",
+              "inputs": [
+                "C1",
+                "V1"
+              ]
+            }
+          },
+          {
+            "id": "D1",
+            "kind": "document",
+            "text": "Le protocole note le pic mémoire allouée tenseurs PyTorch max_memory_allocated et le détecteur. Ce passage sert à comparer les AP et la mémoire PyTorch allouée sur le GPU demandé. La définition de max_memory_allocated figure dans une autre fiche.",
+            "source": {
+              "id": "lexical-decoy-1",
+              "title": "Fiche synthétique de contexte",
+              "url": "https://docs.pytorch.org/docs/main/generated/torch.cuda.max_memory_allocated.html",
+              "section": "Contexte 1"
+            }
+          },
+          {
+            "id": "D2",
+            "kind": "document",
+            "text": "Le protocole note le pic mémoire allouée tenseurs PyTorch max_memory_allocated et le détecteur. Ce passage sert à comparer les AP et la mémoire PyTorch allouée sur le GPU demandé. La définition de max_memory_allocated figure dans une autre fiche.",
+            "source": {
+              "id": "lexical-decoy-2",
+              "title": "Fiche synthétique de contexte",
+              "url": "https://docs.pytorch.org/docs/main/generated/torch.cuda.max_memory_allocated.html",
+              "section": "Contexte 2"
+            }
+          },
+          {
+            "id": "D3",
+            "kind": "document",
+            "text": "Le protocole note le pic mémoire allouée tenseurs PyTorch max_memory_allocated et le détecteur. Ce passage sert à comparer les AP et la mémoire PyTorch allouée sur le GPU demandé. La définition de max_memory_allocated figure dans une autre fiche.",
+            "source": {
+              "id": "lexical-decoy-3",
+              "title": "Fiche synthétique de contexte",
+              "url": "https://docs.pytorch.org/docs/main/generated/torch.cuda.max_memory_allocated.html",
+              "section": "Contexte 3"
+            }
+          },
+          {
+            "id": "D4",
+            "kind": "document",
+            "text": "Le protocole note le pic mémoire allouée tenseurs PyTorch max_memory_allocated et le détecteur. Ce passage sert à comparer les AP et la mémoire PyTorch allouée sur le GPU demandé. La définition de max_memory_allocated figure dans une autre fiche.",
+            "source": {
+              "id": "lexical-decoy-4",
+              "title": "Fiche synthétique de contexte",
+              "url": "https://docs.pytorch.org/docs/main/generated/torch.cuda.max_memory_allocated.html",
+              "section": "Contexte 4"
+            }
+          },
+          {
+            "id": "D5",
+            "kind": "document",
+            "text": "max_memory_allocated indique le maximum d’octets CUDA occupés par les tenseurs actifs. Les blocs libres mis en cache relèvent de max_memory_reserved.",
+            "source": {
+              "id": "memory-allocated",
+              "title": "PyTorch — max_memory_allocated",
+              "url": "https://docs.pytorch.org/docs/main/generated/torch.cuda.max_memory_allocated.html",
+              "section": "max_memory_allocated"
+            }
+          },
+          {
+            "id": "D6",
+            "kind": "document",
+            "text": "max_memory_reserved indique le pic de mémoire GPU gérée par l'allocateur de cache de PyTorch, en octets. La mémoire réservée peut inclure de l'espace inutilisé par les tenseurs mais gardé pour des allocations futures. Ce compteur concerne l'allocateur PyTorch.",
+            "source": {
+              "id": "memory-reserved",
+              "title": "PyTorch — max_memory_reserved",
+              "url": "https://docs.pytorch.org/docs/main/generated/torch.cuda.max_memory_reserved.html",
+              "section": "max_memory_reserved"
+            }
+          },
+          {
+            "id": "S1",
+            "kind": "scope",
+            "text": "Campagne AP principale : 500 images évaluées. Campagne pic de mémoire PyTorch allouée : 100 images évaluées. Campagne latence pipeline p95 : 100 images évaluées. Les latences restent à confirmer sur la charge cible.",
+            "source": {
+              "type": "python_campaign_scope",
+              "inputs": [
+                "M1",
+                "M2",
+                "M3",
+                "M4",
+                "M5",
+                "M6"
+              ]
+            }
+          }
+        ]
+      },
+      "duration_s": 5.592,
+      "usage": {
+        "prompt_tokens": 305,
+        "generated_tokens": 38,
+        "total_duration_ns": 5304310100,
+        "load_duration_ns": 17099500
+      },
+      "llm_calls": [
+        {
+          "phase": "documentary",
+          "prompt_tokens": 305,
+          "generated_tokens": 38,
+          "total_duration_ns": 5304310100,
+          "load_duration_ns": 17099500,
+          "done_reason": "stop"
+        }
+      ],
+      "validation": {
+        "schema_and_references": "valid",
+        "numeric_claims": "rendered_from_python_evidence",
+        "semantic_entailment": "requires_review"
+      },
+      "error": null,
+      "verified_scope": {
+        "origin": "python",
+        "text": "Campagne AP principale : 500 images évaluées. Campagne pic de mémoire PyTorch allouée : 100 images évaluées. Campagne latence pipeline p95 : 100 images évaluées. Les latences restent à confirmer sur la charge cible.",
+        "citations": [
+          "S1"
+        ]
+      },
+      "raw_responses": [
+        {
+          "phase": "documentary",
+          "content": "{\"definition\": {\"citations\": [\"D5\"], \"text\": \"max_memory_allocated indique le maximum d’octets CUDA occupés par les tenseurs actifs.\"}}"
+        }
+      ]
+    },
+    "total_model_calls": 3,
+    "total_usage": {
+      "prompt_tokens": 2733,
+      "generated_tokens": 206,
+      "total_duration_ns": 62910505300
+    },
+    "duration_s": 63.75
+  }
+}

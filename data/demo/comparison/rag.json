@@ -1,0 +1,212 @@
+{
+  "evaluation": {
+    "mode": "rag",
+    "id": "native_resize",
+    "repeat": 1,
+    "status": "generated",
+    "checks": {
+      "status": true,
+      "citations": true,
+      "coverage_signals": true,
+      "claim_limit": true,
+      "call_limit": true,
+      "execution": true
+    },
+    "passed": true,
+    "duration_s": 31.565,
+    "model_calls": 2,
+    "generated_tokens": 158
+  },
+  "result": {
+    "question": "Quels sont le petit côté de référence et la limite du grand côté de Faster R-CNN MobileNetV3 320 FPN ? Le redimensionnement dépend-il des proportions de l’image ?",
+    "model": "qwen3:4b-instruct-2507-q4_K_M",
+    "status": "generated",
+    "claims": [
+      {
+        "kind": "documentary",
+        "claim_id": "C1",
+        "text": "La variante Faster R-CNN MobileNetV3 320 FPN fixe le petit côté de référence à 320 et plafonne le grand côté à 640.",
+        "citations": [
+          "faster-rcnn"
+        ],
+        "source_id": "faster-rcnn",
+        "support_quote": "La variante Faster R-CNN MobileNetV3 320 FPN fixe le petit côté de référence à 320 et plafonne le grand côté à 640. La taille redimensionnée dépend des proportions de l'image. Le constructeur définit aussi les limites de propositions et le seuil de score de son RPN.",
+        "evidence_id": "E1"
+      },
+      {
+        "kind": "documentary",
+        "claim_id": "C2",
+        "text": "La taille redimensionnée dépend des proportions de l'image.",
+        "citations": [
+          "faster-rcnn"
+        ],
+        "source_id": "faster-rcnn",
+        "support_quote": "La variante Faster R-CNN MobileNetV3 320 FPN fixe le petit côté de référence à 320 et plafonne le grand côté à 640. La taille redimensionnée dépend des proportions de l'image. Le constructeur définit aussi les limites de propositions et le seuil de score de son RPN.",
+        "evidence_id": "E1"
+      }
+    ],
+    "missing_information": [],
+    "model_calls": 2,
+    "calls": [
+      {
+        "phase": "draft",
+        "response_received": true,
+        "raw_content": "{\"claims\": [{\"evidence_id\": \"E1\", \"text\": \"La variante Faster R-CNN MobileNetV3 320 FPN fixe le petit côté de référence à 320 et plafonne le grand côté à 640.\"}, {\"evidence_id\": \"E1\", \"text\": \"La taille redimensionnée dépend des proportions de l'image.\"}]}",
+        "usage": {
+          "prompt_tokens": 800,
+          "generated_tokens": 88,
+          "total_duration_ns": 19424583100,
+          "done_reason": "stop"
+        }
+      },
+      {
+        "phase": "audit",
+        "response_received": true,
+        "raw_content": "{\n  \"fully_answered\": true,\n  \"verdicts\": [\n    {\n      \"claim_id\": \"C1\",\n      \"relevant\": true,\n      \"supported\": true\n    },\n    {\n      \"claim_id\": \"C2\",\n      \"relevant\": true,\n      \"supported\": true\n    }\n  ]\n}",
+        "usage": {
+          "prompt_tokens": 609,
+          "generated_tokens": 70,
+          "total_duration_ns": 12073414200,
+          "done_reason": "stop"
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1409,
+      "generated_tokens": 158,
+      "total_duration_ns": 31497997300
+    },
+    "draft_candidates": [
+      {
+        "claim_id": "C1",
+        "text": "La variante Faster R-CNN MobileNetV3 320 FPN fixe le petit côté de référence à 320 et plafonne le grand côté à 640.",
+        "citations": [
+          "faster-rcnn"
+        ],
+        "source_id": "faster-rcnn",
+        "support_quote": "La variante Faster R-CNN MobileNetV3 320 FPN fixe le petit côté de référence à 320 et plafonne le grand côté à 640. La taille redimensionnée dépend des proportions de l'image. Le constructeur définit aussi les limites de propositions et le seuil de score de son RPN.",
+        "evidence_id": "E1"
+      },
+      {
+        "claim_id": "C2",
+        "text": "La taille redimensionnée dépend des proportions de l'image.",
+        "citations": [
+          "faster-rcnn"
+        ],
+        "source_id": "faster-rcnn",
+        "support_quote": "La variante Faster R-CNN MobileNetV3 320 FPN fixe le petit côté de référence à 320 et plafonne le grand côté à 640. La taille redimensionnée dépend des proportions de l'image. Le constructeur définit aussi les limites de propositions et le seuil de score de son RPN.",
+        "evidence_id": "E1"
+      }
+    ],
+    "mechanical_rejections": [],
+    "audit_rejections": [],
+    "audit": {
+      "fully_answered": true,
+      "verdicts": [
+        {
+          "claim_id": "C1",
+          "relevant": true,
+          "supported": true
+        },
+        {
+          "claim_id": "C2",
+          "relevant": true,
+          "supported": true
+        }
+      ]
+    },
+    "error": null,
+    "duration_s": 31.565,
+    "retrieved_passages": [
+      {
+        "id": "faster-rcnn",
+        "title": "Torchvision — Faster R-CNN MobileNetV3 Large 320 FPN",
+        "url": "https://github.com/pytorch/vision/blob/v0.20.1/torchvision/models/detection/faster_rcnn.py",
+        "version": "Torchvision v0.20.1",
+        "section": "fasterrcnn_mobilenet_v3_large_320_fpn",
+        "heading": "Configuration native de Faster R-CNN 320",
+        "text": "La variante Faster R-CNN MobileNetV3 320 FPN fixe le petit côté de référence à 320 et plafonne le grand côté à 640. La taille redimensionnée dépend des proportions de l'image. Le constructeur définit aussi les limites de propositions et le seuil de score de son RPN.",
+        "score": 30.091123622711944,
+        "matched_terms": [
+          "320",
+          "cnn",
+          "cote",
+          "depend",
+          "faster",
+          "fpn",
+          "grand",
+          "image",
+          "mobilenetv3",
+          "petit",
+          "proportions",
+          "r",
+          "reference"
+        ]
+      },
+      {
+        "id": "ssdlite",
+        "title": "Torchvision — SSDLite MobileNetV3 Large 320",
+        "url": "https://docs.pytorch.org/vision/0.20/models/generated/torchvision.models.detection.ssdlite320_mobilenet_v3_large.html",
+        "version": "Torchvision 0.20",
+        "section": "Model builder and COCO_V1",
+        "heading": "Entrée fixe et poids SSDLite",
+        "text": "Le constructeur SSDLite320 de Torchvision associe une tête de détection SSD légère à un backbone MobileNetV3 Large et redimensionne l'entrée à 320 × 320 pixels. Les poids COCO_V1 permettent d'exécuter le détecteur préentraîné sur des images mises à l'échelle entre zéro et un.",
+        "score": 3.9986477207636675,
+        "matched_terms": [
+          "320",
+          "mobilenetv3"
+        ]
+      },
+      {
+        "id": "coco-eval",
+        "title": "COCO API — COCOeval",
+        "url": "https://github.com/cocodataset/cocoapi/blob/master/PythonAPI/pycocotools/cocoeval.py",
+        "version": "Code de référence COCO API",
+        "section": "Params.setDetParams, evaluate, accumulate, summarize",
+        "heading": "Limites de détections et rappel COCOeval",
+        "text": "COCOeval évalue les prédictions par image, agrège les résultats puis résume les métriques. Pour les boîtes, maxDets est configuré à 1, 10 et 100. L'AP principale utilise la limite de 100 et la grille de rappel comporte 101 points de zéro à un.",
+        "score": 3.9522024950538204,
+        "matched_terms": [
+          "image",
+          "limite"
+        ]
+      }
+    ],
+    "excerpts": [
+      {
+        "evidence_id": "E1",
+        "source_id": "faster-rcnn",
+        "heading": "Configuration native de Faster R-CNN 320",
+        "quote": "La variante Faster R-CNN MobileNetV3 320 FPN fixe le petit côté de référence à 320 et plafonne le grand côté à 640. La taille redimensionnée dépend des proportions de l'image. Le constructeur définit aussi les limites de propositions et le seuil de score de son RPN."
+      },
+      {
+        "evidence_id": "E2",
+        "source_id": "ssdlite",
+        "heading": "Entrée fixe et poids SSDLite",
+        "quote": "Le constructeur SSDLite320 de Torchvision associe une tête de détection SSD légère à un backbone MobileNetV3 Large et redimensionne l'entrée à 320 × 320 pixels. Les poids COCO_V1 permettent d'exécuter le détecteur préentraîné sur des images mises à l'échelle entre zéro et un."
+      },
+      {
+        "evidence_id": "E3",
+        "source_id": "coco-eval",
+        "heading": "Limites de détections et rappel COCOeval",
+        "quote": "COCOeval évalue les prédictions par image, agrège les résultats puis résume les métriques. Pour les boîtes, maxDets est configuré à 1, 10 et 100. L'AP principale utilise la limite de 100 et la grille de rappel comporte 101 points de zéro à un."
+      }
+    ],
+    "accepted_ids": [
+      "faster-rcnn",
+      "ssdlite",
+      "coco-eval"
+    ],
+    "corpus_revision": "j3-v1",
+    "corpus_sha256": "4ea20914f41665cdb75d9419da50f6613e7ccb4c932dd53203ee6c8b30dfb426",
+    "validation": {
+      "quotes": "exact_substrings",
+      "numeric_literals": "in_exact_quotes",
+      "support_and_relevance": "estimated_by_same_local_llm",
+      "semantic_guarantee": false,
+      "independent_model_verifier": false,
+      "completeness": "requires_review",
+      "question_identifiers_missing_from_passages": []
+    }
+  }
+}

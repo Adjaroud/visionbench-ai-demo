@@ -1,0 +1,65 @@
+{
+  "kind": "recorded",
+  "model": "qwen3:4b",
+  "campaign_date": "2026-11-05",
+  "case_id": "ND3",
+  "repeat": 1,
+  "source_run_sha256": "54f20d10005f76437e0395420cd324f30573761bb65ac80f1432a6470dd1f6d4",
+  "source_protocol_sha256": "e7f82d650db2a23991c8912c64f209025d422fa9ec2d7cfe6625ea12f1b3411b",
+  "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "report": {
+    "request": {
+      "text": "Que demande le score AP75 pour le chevauchement des boîtes ?",
+      "metrics": [],
+      "gpu": null,
+      "p95_limit_ms": null,
+      "memory_limit_mib": null,
+      "ap_min": null,
+      "p95_strict": false,
+      "memory_strict": false,
+      "ap_strict": false
+    },
+    "mode": "agent",
+    "model": "qwen3:4b",
+    "status": "passages_found",
+    "stop_reason": "completed",
+    "model_calls": 0,
+    "planner_error_detail": null,
+    "duration_s": 1.062,
+    "trace": [
+      {
+        "tool": "search_documents",
+        "status": "ok"
+      }
+    ],
+    "documents": [
+      {
+        "id": "nms",
+        "title": "Torchvision — nms",
+        "section": "nms",
+        "url": "https://docs.pytorch.org/vision/0.20/generated/torchvision.ops.nms.html",
+        "text": "La NMS réduit les boîtes redondantes en examinant les scores et le chevauchement. Une boîte de score plus faible peut être supprimée si son IoU avec une boîte retenue de meilleur score dépasse le seuil. Cette opération intervient dans le post-traitement."
+      },
+      {
+        "id": "coco-ap",
+        "title": "COCO — Detection evaluation",
+        "section": "Detection evaluation metrics",
+        "url": "https://github.com/cocodataset/cocodataset.github.io/blob/master/dataset/detection-eval.htm",
+        "text": "L'AP principale COCO pour les boîtes moyenne les performances sur dix seuils d'IoU allant de 0,50 à 0,95 par pas de 0,05. AP50 utilise le seuil de 0,50, et AP75 utilise celui de 0,75. Les seuils élevés rendent la mesure plus sensible au placement précis des boîtes."
+      },
+      {
+        "id": "iou",
+        "title": "Torchvision — box_iou",
+        "section": "box_iou",
+        "url": "https://docs.pytorch.org/vision/0.20/generated/torchvision.ops.box_iou.html",
+        "text": "L'IoU est le rapport entre l'aire d'intersection de deux boîtes et l'aire de leur union. Deux boîtes disjointes ont une IoU nulle. À géométrie identique et aire positive, l'IoU vaut un."
+      }
+    ],
+    "measurements": [],
+    "available_gpus": [],
+    "comparisons": {},
+    "recommendation": null,
+    "proposed_experiment": null,
+    "llm_usage": []
+  }
+}

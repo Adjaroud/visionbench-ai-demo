@@ -1,0 +1,3 @@
+# Conserver les octets utilisés par les manifestes d'intégrité.
+* -text
+*.sqlite binary

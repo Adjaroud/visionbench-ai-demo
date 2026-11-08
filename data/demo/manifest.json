@@ -1,0 +1,101 @@
+{
+  "created_at_utc": "2026-11-05T10:23:26.379388+00:00",
+  "kind": "recorded_agent_and_live_fixed_cpu_demo",
+  "scenarios": {
+    "memory": {
+      "label": "Respecter un plafond mémoire",
+      "case": "NS1",
+      "live": {
+        "kind": "selection",
+        "question": "Quel détecteur respecte les contraintes indiquées avec la meilleure AP ?",
+        "gpu": "RTX 3050 Laptop",
+        "p95": 80,
+        "memory": 50
+      },
+      "recording": "data/demo/recordings/memory.json"
+    },
+    "latency": {
+      "label": "Privilégier une faible latence",
+      "case": "NS2",
+      "live": {
+        "kind": "selection",
+        "question": "Quel détecteur respecte les contraintes indiquées avec la meilleure AP ?",
+        "gpu": "RTX 3050 Laptop",
+        "p95": 25,
+        "memory": 120,
+        "ap": 0.25
+      },
+      "recording": "data/demo/recordings/latency.json"
+    },
+    "none": {
+      "label": "Reconnaître une exigence impossible",
+      "case": "NS3",
+      "live": {
+        "kind": "selection",
+        "question": "Quel détecteur respecte les contraintes indiquées avec la meilleure AP ?",
+        "gpu": "RTX 3050 Laptop",
+        "p95": 100,
+        "ap": 0.3
+      },
+      "recording": "data/demo/recordings/none.json"
+    },
+    "documents": {
+      "label": "Comprendre le score AP75",
+      "case": "ND3",
+      "live": {
+        "kind": "documents",
+        "question": "Que demande le score AP75 pour le chevauchement des boîtes ?"
+      },
+      "recording": "data/demo/recordings/documents.json"
+    },
+    "missing": {
+      "label": "Demander un GPU non mesuré",
+      "case": "NM3",
+      "live": {
+        "kind": "measures",
+        "question": "Quelles mesures de p95 sont disponibles sur ce matériel ?",
+        "gpu": "RTX 3050 Ti Laptop",
+        "metrics": [
+          "pipeline_p95"
+        ]
+      },
+      "recording": "data/demo/recordings/missing.json"
+    },
+    "compare": {
+      "label": "Contrôler la comparabilité",
+      "case": "NC3",
+      "live": {
+        "kind": "measures",
+        "question": "Récupère et vérifie les latences médiane et p95 des deux pipelines.",
+        "gpu": "RTX 3050 Laptop",
+        "metrics": [
+          "pipeline_median",
+          "pipeline_p95"
+        ]
+      },
+      "recording": "data/demo/recordings/compare.json"
+    }
+  },
+  "evaluation": {
+    "case_count": 20,
+    "repeats": 3,
+    "runs": 180,
+    "num_gpu": 0,
+    "campaign_date": "2026-11-05",
+    "source_protocol": "reports/model_comparison/protocol.json"
+  },
+  "files_sha256": {
+    "data/corpus/vision_docs.json": "4ea20914f41665cdb75d9419da50f6613e7ccb4c932dd53203ee6c8b30dfb426",
+    "reports/visionbench.sqlite": "bf0d38d3deb1454f6e6d8f46d83e0e8d483aa66e13cb3aaa2562f8341e301a49",
+    "reports/j2_latency_pilot.json": "fda0bcbc6d5c9324c5e29229950519c89eef83834c71850a23e0759adc3e7b35",
+    "reports/j2_coco_eval/metrics.json": "6eecf096cae28cc9a19e4245eacd7a35ea46824b643b0505ae73306e432023c9",
+    "reports/model_comparison/summary.json": "ec2020e19e76b53d80258d64ac0cf7d74af1ac7d72c4bdb8b75a5601e51355e8",
+    "reports/model_comparison/protocol.json": "e7f82d650db2a23991c8912c64f209025d422fa9ec2d7cfe6625ea12f1b3411b",
+    "data/demo/recordings/memory.json": "a867842f5ccf3750a01c5c4b8baf8586517d49d26644eec49dd8ac3313b69aec",
+    "data/demo/recordings/latency.json": "f56f793277dcf1c00130d476612708229a14ce072c94f2c87e501b2f8c83096e",
+    "data/demo/recordings/none.json": "deff77cfa009ceee93b8a9035d72503b1e30f0b7320e90f2adc006b5c8091510",
+    "data/demo/recordings/documents.json": "a3e95b0fe11bd6afde7d10a2d831427b3685e68b89ded6bfdf04fcf654d1e53e",
+    "data/demo/recordings/missing.json": "0d3e3252a85321d91438840a60f7476221148fa977bf93d2a63da7f25281d087",
+    "data/demo/recordings/compare.json": "35b0b5040a92c93f0480e07dd7c3623a33bdc76cbd6e90ffcd0c0062bc98216c"
+  }
+}

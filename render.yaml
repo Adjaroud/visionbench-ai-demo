@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: visionbench-ai
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /_stcore/health
+    autoDeployTrigger: "off"
+    envVars:
+      - key: PORT
+        value: "8501"
