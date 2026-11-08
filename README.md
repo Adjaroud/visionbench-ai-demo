@@ -45,11 +45,3 @@ python -X utf8 -B -m streamlit run streamlit_app.py --server.address 127.0.0.1 -
 ```
 
 Le dossier séparé contient les dépendances de l’agent. Dans **Explorer librement → Parcours LLM**, choisir **Appels Ollama sur ce PC**. La version hébergée est prévue pour la lecture des traces.
-
-## Vérifier ou héberger la démo
-
-```sh
-python scripts/validate_container.py --image visionbench-ai:demo --out reports/validation-locale.json
-```
-
-Le fichier `render.yaml` décrit un service Docker Render Free. Il reste à connecter le dépôt dans Render, puis à vérifier l’URL attribuée après le premier déploiement. [Guide de déploiement Docker](https://render.com/docs/docker)
